@@ -1,0 +1,23 @@
+@font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 100; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-100.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-100.woff") format("woff") } 
+@font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 300; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-300.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-300.woff") format("woff") } 
+@font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 400; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-regular.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-regular.woff") format("woff") } 
+@font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 500; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-500.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-500.woff") format("woff") } 
+@font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 700; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-700.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-700.woff") format("woff") } 
+@font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 900; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-900.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-900.woff") format("woff") } 
+html { font-size: clamp(5px, 1.302vw, 10px); } 
+body { line-height: 1; background-color: #000; word-break: keep-all; margin: 0; padding: 0; font-family: "NespressoLucas", "Noto Sans KR", Helvetica, sans-serif; color: #fff; font-size: .75em; line-height: 1.125rem; font-weight: 400; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-text-size-adjust: 100% } 
+.visually-hidden { position: absolute; clip: rect(1px 1px 1px 1px); text-indent: -100000px; white-space: nowrap } 
+
+/********************************************************** setting *******************************************************/
+
+*:after { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; } 
+#quadrantCoffee { font-family: "NespressoLucas", "Noto Sans KR", Helvetica, sans-serif; color: #000; line-height: 1.1; background-color: #fff; min-height: 100vh; letter-spacing: -0.05em; word-break: keep-all; } 
+#quadrantCoffee img { vertical-align: top; } 
+#quadrantCoffee * { font-family: "NespressoLucas", "Noto Sans KR", Helvetica, sans-serif; } 
+#quadrantCoffee *,
+#quadrantCoffee *:before,
+#quadrantCoffee *:after { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; } 
+#quadrantCoffee .blind { position: absolute !important; overflow: hidden !important; width: 1px !important; height: 1px !important; margin: 0 !important; padding: 0 !important; clip: rect(0, 0, 0, 0); border: 0 !important; font-size: 1px } 
+#quadrantCoffee img { max-width: 100%; } 
+
+/********************************************************** main **********************************************************/
