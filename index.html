@@ -51,10 +51,33 @@
   <!-- End Google Tag Manager (noscript) -->
 
 
-  <!-- replace later [Start]-->
-  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    @font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 100; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-100.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-100.woff") format("woff") } 
+    @font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 300; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-300.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-300.woff") format("woff") } 
+    @font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 400; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-regular.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-regular.woff") format("woff") } 
+    @font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 500; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-500.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-500.woff") format("woff") } 
+    @font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 700; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-700.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-700.woff") format("woff") } 
+    @font-face { font-family: "Noto Sans KR"; font-style: normal; font-weight: 900; src: local(""), url("https://www.nespresso.com/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-900.woff2") format("woff2"), url("/shared_res/agility/fonts/noto_sans_kr/noto-sans-kr-v27-latin_korean-900.woff") format("woff") } 
+    html { font-size: clamp(5px, 1.302vw, 10px); } 
+    body { line-height: 1; background-color: #000; word-break: keep-all; margin: 0; padding: 0; font-family: "NespressoLucas", "Noto Sans KR", Helvetica, sans-serif; color: #fff; font-size: .75em; line-height: 1.125rem; font-weight: 400; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-text-size-adjust: 100% } 
+    .visually-hidden { position: absolute; clip: rect(1px 1px 1px 1px); text-indent: -100000px; white-space: nowrap } 
+
+    /********************************************************** setting *******************************************************/
+
+    *:after { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; } 
+    #quadrantCoffee { font-family: "NespressoLucas", "Noto Sans KR", Helvetica, sans-serif; color: #000; line-height: 1.1; background-color: #fff; min-height: 100vh; letter-spacing: -0.05em; word-break: keep-all; } 
+    #quadrantCoffee img { vertical-align: top; } 
+    #quadrantCoffee * { font-family: "NespressoLucas", "Noto Sans KR", Helvetica, sans-serif; } 
+    #quadrantCoffee *,
+    #quadrantCoffee *:before,
+    #quadrantCoffee *:after { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; } 
+    #quadrantCoffee .blind { position: absolute !important; overflow: hidden !important; width: 1px !important; height: 1px !important; margin: 0 !important; padding: 0 !important; clip: rect(0, 0, 0, 0); border: 0 !important; font-size: 1px } 
+    #quadrantCoffee img { max-width: 100%; } 
+
+    /********************************************************** main **********************************************************/
+  </style>
+  
   <link rel="stylesheet" href="./css/style.css">
-  <!-- replace later [End] -->
 
   <script src="./coffeeData.js"></script>
   <script src="./filterData.js"></script>
@@ -109,32 +132,23 @@
                     <button class="bottom_left"></button>
                     <button class="bottom_right"></button>
                   </div>
-                  <div class="center">
-                    <i class="ico_touch"></i>
+                  <div class="center"><i class="ico_touch"></i>
                     <p>취향에 맞는 영역을 <br>눌러보세요!</p>
                   </div>
                   <div class="area_ball top">
-                    <i>
-                      <img src="./images/ico_soft.png" alt="">
-                    </i>
+                    <i><img src="./images/ico_soft.png" alt=""></i>
                     <span>부드러운</span>
                   </div>
                   <div class="area_ball right">
-                    <i>
-                      <img src="./images/ico_neat.png" alt="">
-                    </i>
+                    <i><img src="./images/ico_neat.png" alt=""></i>
                     <span>산뜻한</span>
                   </div>
                   <div class="area_ball bottom">
-                    <i>
-                      <img src="./images/ico_hard.png" alt="">
-                    </i>
+                    <i><img src="./images/ico_hard.png" alt=""></i>
                     <span>강렬한</span>
                   </div>
                   <div class="area_ball left">
-                    <i>
-                      <img src="./images/ico_savory.png" alt="">
-                    </i>
+                    <i><img src="./images/ico_savory.png" alt=""></i>
                     <span>고소한</span>
                   </div>
                 </div>
@@ -142,171 +156,38 @@
                 <div class="content">
                   <div class="area_rect top">
                     <div>
-                      <i>
-                        <img src="./images/ico_soft.png" alt="">
-                      </i>
+                      <i><img src="./images/ico_soft.png" alt=""></i>
                       <span>부드러운</span>
                     </div>
                   </div>
                   <div class="area_rect right">
                     <div>
-                      <i>
-                        <img src="./images/ico_neat.png" alt="">
-                      </i>
+                      <i><img src="./images/ico_neat.png" alt=""></i>
                       <span>산뜻한</span>
                     </div>
                   </div>
                   <div class="area_rect bottom">
                     <div>
-                      <i>
-                        <img src="./images/ico_hard.png" alt="">
-                      </i>
+                      <i><img src="./images/ico_hard.png" alt=""></i>
                       <span>강렬한</span>
                     </div>
                   </div>
                   <div class="area_rect left">
                     <div>
-                      <i>
-                        <img src="./images/ico_savory.png" alt="">
-                      </i>
+                      <i><img src="./images/ico_savory.png" alt=""></i>
                       <span>고소한</span>
                     </div>
                   </div>
 
                   <div class="area">
-                    <div class="top_right">
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                    </div>
-                    <div class="bottom_right">
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                    </div>
-                    <div class="bottom_left">
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                    </div>
-                    <div class="top_left">
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                      <button></button>
-                    </div>
+                    <div class="top_right"></div>
+                    <div class="bottom_right"></div>
+                    <div class="bottom_left"></div>
+                    <div class="top_left"></div>
                   </div>
                 </div>
 
-                <article class="product_bubble hide">
-                  <div class="thumbnail">
-                    <img src="" alt="">
-                  </div>
-                  <div class="info">
-                    <div class="product_bubble_title"></div>
-                    <div class="product_bubble_desc">
-                      <p></p>
-                      <p></p>
-                    </div>
-                    <div class="product_bubble_control">
-                      <p class="price">₩ 0</p>
-                      <div class="counter">
-                        <button class="btn_minus"></button>
-                        <p>0(0)</p>
-                        <button class="btn_plus"></button>
-                      </div>
-                      <button class="add_cart"></button>
-                    </div>
-                  </div>
-                  <button class="product_bubble_close"></button>
-                </article>
+                <article class="product_bubble hide"></article>
 
                 <div class="filter fold pc_only">
                   <div class="filter_header">
@@ -320,41 +201,6 @@
                           <input type="checkbox" name="ico_all" checked>
                           <i class="ico_all"></i>
                           <span>전체</span>
-                        </label>
-                      </li>
-                      <li class="filter_item">
-                        <label>
-                          <input type="checkbox" name="ico_decaf" value="decaf">
-                          <i class="ico_decaf"></i>
-                          <span>디카페인</span>
-                        </label>
-                      </li>
-                      <li class="filter_item">
-                        <label>
-                          <input type="checkbox" name="ico_ice" value="ice">
-                          <i class="ico_ice"></i>
-                          <span>아이스</span>
-                        </label>
-                      </li>
-                      <li class="filter_item">
-                        <label>
-                          <input type="checkbox" name="ico_star" value="star">
-                          <i class="ico_star"></i>
-                          <span>스타벅스</span>
-                        </label>
-                      </li>
-                      <li class="filter_item">
-                        <label>
-                          <input type="checkbox" name="ico_milk" value="milk">
-                          <i class="ico_milk"></i>
-                          <span>밀크</span>
-                        </label>
-                      </li>
-                      <li class="filter_item">
-                        <label>
-                          <input type="checkbox" name="ico_flavored" value="flavored">
-                          <i class="ico_flavored"></i>
-                          <span>가향커피</span>
                         </label>
                       </li>
                     </ul>
@@ -408,41 +254,6 @@
                         <span>전체</span>
                       </label>
                     </li>
-                    <li class="filter_item">
-                      <label>
-                        <input type="checkbox" name="ico_decaf" value="decaf">
-                        <i class="ico_decaf"></i>
-                        <span>디카페인</span>
-                      </label>
-                    </li>
-                    <li class="filter_item">
-                      <label>
-                        <input type="checkbox" name="ico_ice" value="ice">
-                        <i class="ico_ice"></i>
-                        <span>아이스</span>
-                      </label>
-                    </li>
-                    <li class="filter_item">
-                      <label>
-                        <input type="checkbox" name="ico_star" value="star">
-                        <i class="ico_star"></i>
-                        <span>스타벅스</span>
-                      </label>
-                    </li>
-                    <li class="filter_item">
-                      <label>
-                        <input type="checkbox" name="ico_milk" value="milk">
-                        <i class="ico_milk"></i>
-                        <span>밀크</span>
-                      </label>
-                    </li>
-                    <li class="filter_item">
-                      <label>
-                        <input type="checkbox" name="ico_flavored" value="flavored">
-                        <i class="ico_flavored"></i>
-                        <span>가향커피</span>
-                      </label>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -462,76 +273,6 @@
                     <div class="product_section_category_body">
                       <div class="product_section_category_item_list swiper">
                         <ul class="swiper-wrapper">
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="bedge new">NEW</div>
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
                         </ul>
                       </div>
                       <div class="button_wrap">
@@ -547,75 +288,6 @@
                     <div class="product_section_category_body">
                       <div class="product_section_category_item_list swiper">
                         <ul class="swiper-wrapper">
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
                         </ul>
                       </div>
                       <div class="button_wrap">
@@ -631,75 +303,6 @@
                     <div class="product_section_category_body">
                       <div class="product_section_category_item_list swiper">
                         <ul class="swiper-wrapper">
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
                         </ul>
                       </div>
                       <div class="button_wrap">
@@ -715,75 +318,6 @@
                     <div class="product_section_category_body">
                       <div class="product_section_category_item_list swiper">
                         <ul class="swiper-wrapper">
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
                         </ul>
                       </div>
                       <div class="button_wrap">
@@ -799,75 +333,6 @@
                     <div class="product_section_category_body" data-filter="디카페인|가향|아이스">
                       <div class="product_section_category_item_list swiper">
                         <ul class="swiper-wrapper">
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="swiper-slide">
-                            <div class="thumbnail">
-                              <img src="./images/capsule_dummy.png" alt="">
-                            </div>
-                            <div class="info">
-                              <div class="item_title">솔레리오</div>
-                              <div class="item_desc">
-                                <p>건식 가공의 섬세한 꽃향</p>
-                                <p>우유와 어울리는 달콤함</p>
-                              </div>
-                              <div class="item_button_wrap">
-                                <div class="item_price">₩ 1,000</div>
-                                <div class="item_handle">
-                                  <div class="item_cnt_handle">
-                                    <button class="minus_button"></button>
-                                    <input type="number" name="" id="" value="0">
-                                    <button class="plus_button"></button>
-                                  </div>
-                                  <button class="item_cart_button"></button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
                         </ul>
                       </div>
                       <div class="button_wrap">
@@ -897,76 +362,6 @@
                         <div class="swiper-wrapper">
                           <div class="swiper-slide">
                             <ul>
-                              <li>
-                                <div class="thumbnail">
-                                  <img src="./images/capsule_dummy.png" alt="">
-                                </div>
-                                <div class="info">
-                                  <div class="bedge new">NEW</div>
-                                  <div class="item_title">솔레리오</div>
-                                  <div class="item_desc">
-                                    <p>건식 가공의 섬세한 꽃향</p>
-                                    <p>우유와 어울리는 달콤함</p>
-                                  </div>
-                                  <div class="item_button_wrap">
-                                    <div class="item_price">₩ 1,000</div>
-                                    <div class="item_handle">
-                                      <div class="item_cnt_handle">
-                                        <button class="minus_button"></button>
-                                        <input type="number" name="" id="" value="0">
-                                        <button class="plus_button"></button>
-                                      </div>
-                                      <button class="item_cart_button"></button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="thumbnail">
-                                  <img src="./images/capsule_dummy.png" alt="">
-                                </div>
-                                <div class="info">
-                                  <div class="item_title">솔레리오</div>
-                                  <div class="item_desc">
-                                    <p>건식 가공의 섬세한 꽃향</p>
-                                    <p>우유와 어울리는 달콤함</p>
-                                  </div>
-                                  <div class="item_button_wrap">
-                                    <div class="item_price">₩ 1,000</div>
-                                    <div class="item_handle">
-                                      <div class="item_cnt_handle">
-                                        <button class="minus_button"></button>
-                                        <input type="number" name="" id="" value="0">
-                                        <button class="plus_button"></button>
-                                      </div>
-                                      <button class="item_cart_button"></button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="thumbnail">
-                                  <img src="./images/capsule_dummy.png" alt="">
-                                </div>
-                                <div class="info">
-                                  <div class="item_title">솔레리오</div>
-                                  <div class="item_desc">
-                                    <p>건식 가공의 섬세한 꽃향</p>
-                                    <p>우유와 어울리는 달콤함</p>
-                                  </div>
-                                  <div class="item_button_wrap">
-                                    <div class="item_price">₩ 1,000</div>
-                                    <div class="item_handle">
-                                      <div class="item_cnt_handle">
-                                        <button class="minus_button"></button>
-                                        <input type="number" name="" id="" value="0">
-                                        <button class="plus_button"></button>
-                                      </div>
-                                      <button class="item_cart_button"></button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </li>
                             </ul>
                           </div>
                         </div>
@@ -985,8 +380,8 @@
 
   <script>
     const langChangeFunc = () => {
-      // const lang = window.location.pathname.split('/')[2];
-      const lang = 'kr';
+      const lang = window.location.pathname.split('/')[2];
+      // const lang = 'kr';
 
       let langChangeElementList = document.querySelectorAll(".lang-change");
 
@@ -1005,22 +400,6 @@
     }
 
     const finder = new CoffeeFinder();
-
-    document.querySelector('.vertuo_button').addEventListener('click', (e) => {
-      e.target.closest('.button_wrap').querySelectorAll('button').forEach(button => button.classList.remove('active'))
-      e.target.closest('button').classList.add('active');
-      finder.setType('vl');
-    })
-    document.querySelector('.original_button').addEventListener('click', (e) => {
-      e.target.closest('.button_wrap').querySelectorAll('button').forEach(button => button.classList.remove('active'))
-      e.target.closest('button').classList.add('active');
-      finder.setType('ol');
-    })
-
-    document.querySelectorAll('.overlay .area button').forEach((area) => area.addEventListener('click', finder.selectContent.bind(finder)));
-    document.querySelectorAll('.reset_button').forEach((button) => button.addEventListener('click', finder.resetContent.bind(finder)));
-    document.querySelectorAll('.move_button').forEach((area) => area.addEventListener('click', finder.moveArea.bind(finder)));
-    document.querySelector('.key_body .filter_header').addEventListener('click', finder.openFilter.bind(finder));
 
     langChangeFunc();
   </script>

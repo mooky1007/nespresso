@@ -5,6 +5,7 @@ class CoffeeFinder {
             ol: new Map(),
             vl: new Map(),
         };
+        this.originFilterData = filterList;
         this.filterData = new Set();
 
         this.init();
@@ -36,7 +37,61 @@ class CoffeeFinder {
                 this.updateComponents().filterTags();
             });
         });
+    }
 
+    async init() {
+        this.fillArea();
+        this.setMobileCatogoryButton();
+        this.createFilterMenus();
+
+        await this.getData();
+        this.setComponents().cellItems(Object.values(this.coffeeData).flat());
+        this.setComponents().layerEl(Object.values(this.coffeeData).flat());
+
+        this.setType('vl');
+
+        this.layer = this.setComponents().areaLayer();
+        this.setComponents().areaCell();
+        this.setComponents().mobileFilterTags();
+        this.setComponents().pcSwiper();
+
+        document.querySelector('.vertuo_button').addEventListener('click', (e) => {
+            e.target
+                .closest('.button_wrap')
+                .querySelectorAll('button')
+                .forEach((button) => button.classList.remove('active'));
+            e.target.closest('button').classList.add('active');
+            this.setType('vl');
+        });
+        document.querySelector('.original_button').addEventListener('click', (e) => {
+            e.target
+                .closest('.button_wrap')
+                .querySelectorAll('button')
+                .forEach((button) => button.classList.remove('active'));
+            e.target.closest('button').classList.add('active');
+            this.setType('ol');
+        });
+
+        document.querySelectorAll('.overlay .area button').forEach((area) => area.addEventListener('click', this.selectContent.bind(this)));
+        document.querySelectorAll('.reset_button').forEach((button) => button.addEventListener('click', this.resetContent.bind(this)));
+        document.querySelectorAll('.move_button').forEach((area) => area.addEventListener('click', this.moveArea.bind(this)));
+        document.querySelector('.key_body .filter_header').addEventListener('click', this.openFilter.bind(this));
+
+        this.render();
+    }
+
+    async addCart(sku, count) {
+        if (window.CartManager) {
+            await window.CartManager.updateItem(sku, count);
+            return;
+        }
+
+        console.log(sku, count);
+        alert(`${sku} / ${count}`);
+        return;
+    }
+
+    setMobileCatogoryButton() {
         const cateMenus = document.querySelectorAll('.product_section_category_group .scroll_container button');
         cateMenus.forEach((el) => {
             el.addEventListener('click', (e) => {
@@ -52,23 +107,51 @@ class CoffeeFinder {
         });
     }
 
-    async init() {
-        await this.getData();
-        this.setComponents().cellItems(Object.values(this.coffeeData).flat());
-        this.setComponents().layerEl(Object.values(this.coffeeData).flat());
+    fillArea() {
+        const area = document.querySelectorAll('.key_body .content .area > div');
+        area.forEach((el) => {
+            for (let i = 0; i < 25; i++) {
+                const button = document.createElement('button');
+                el.append(button);
+            }
+        });
+    }
 
-        this.setType('vl');
+    createFilterMenus() {
+        this.originFilterData.forEach((filter) => {
+            const { color, filterKey, iconUrl, name } = filter;
+            const css1 = `
+              #quadrantCoffee .filter_body i.ico_${filterKey}::after {
+                background-image: url('${iconUrl}');
+              }
+            `;
+            const css2 = `
+              #quadrantCoffee .filter_body label:has(input[name='ico_${filterKey}']:checked) i {
+                background: ${color};
+              }
+            `;
+            const injectCss = document.createElement('style');
+            injectCss.innerHTML = css1 + css2;
+            document.querySelector('head').append(injectCss);
 
-        this.layer = this.setComponents().areaLayer();
-        this.setComponents().areaCell();
-        this.setComponents().mobileFilterTags();
-        this.setComponents().pcSwiper();
-
-        this.render();
+            const filterItem = document.createElement('li');
+            filterItem.classList.add('filter_item');
+            filterItem.innerHTML = `
+              <label>
+                <input type="checkbox" name="ico_${filterKey}" value="${filterKey}">
+                <i class="ico_${filterKey}"></i>
+                <span>${name}</span>
+              </label>
+            `;
+            document.querySelector('.filter.mo_only .filter_body ul').append(filterItem);
+            document.querySelector('.filter.pc_only .filter_body ul').append(filterItem.cloneNode(true));
+        });
     }
 
     async getData() {
-        this.coffeeData = coffeeDataDev;;
+        if (!window.napi) this.coffeeData = coffeeDataDev;
+        else this.coffeeData = coffeeData;
+
         if (!window.napi) this.setStarbucksData(Object.values(this.coffeeData).flat());
         else {
             await Promise.all(
@@ -154,8 +237,14 @@ class CoffeeFinder {
 
                         const { top, left, width } = target.getBoundingClientRect();
                         const layerRect = this.areaLayer.getBoundingClientRect();
-                        this.areaLayer.style.top = `${top + window.pageYOffset - bodyOffsetY - layerRect.height}px`;
-                        this.areaLayer.style.left = `${left + window.pageXOffset - bodyOffsetX + width / 2 - layerRect.width / 2}px`;
+                        this.areaLayer.style.top = `${Math.max(10, top + window.pageYOffset - bodyOffsetY - layerRect.height)}px`;
+                        this.areaLayer.style.left = `${Math.max(
+                            10,
+                            Math.min(
+                                keyBody.getBoundingClientRect().width - layerRect.width - 10,
+                                left + window.pageXOffset - bodyOffsetX + width / 2 - layerRect.width / 2
+                            )
+                        )}px`;
                     },
                     close: () => {
                         this.areaLayer.classList.add('hide');
@@ -184,6 +273,11 @@ class CoffeeFinder {
                 });
             },
             productItem: (data) => {
+                const topRow = document.createElement('div');
+                topRow.classList.add('list_row');
+                const bottomRow = document.createElement('div');
+                bottomRow.classList.add('list_row');
+
                 const thumbnail = document.createElement('div');
                 thumbnail.classList.add('thumbnail');
                 const image = document.createElement('img');
@@ -247,16 +341,28 @@ class CoffeeFinder {
                 const itemCartButton = document.createElement('div');
                 itemCartButton.classList.add('item_cart_button');
 
+                itemCartButton.addEventListener('click', () => {
+                    this.addCart(data.sku, +count.dataset.value);
+                });
+
                 itemHandle.append(itemCntHandle, itemCartButton);
 
                 buttonwrap.append(price, itemHandle);
 
-                info.append(title, desc, buttonwrap);
+                info.append(title, desc);
 
-                return [thumbnail, info];
+                topRow.append(thumbnail, info);
+                bottomRow.append(buttonwrap);
+
+                return [topRow, bottomRow];
             },
             layerEl: (data) => {
                 data.forEach((cellData) => {
+                    const topRow = document.createElement('div');
+                    topRow.classList.add('bubble_row');
+                    const bottomRow = document.createElement('div');
+                    bottomRow.classList.add('bubble_row');
+
                     const thumbnail = document.createElement('div');
                     thumbnail.classList.add('thumbnail');
                     const img = document.createElement('img');
@@ -278,7 +384,7 @@ class CoffeeFinder {
                     const p2 = document.createElement('p');
 
                     p1.textContent = cellData.capsuleProductAromatics.join(' ,');
-                    p2.innerHTML = cellData.headline + `<br>` + cellData.category;
+                    p2.innerHTML = cellData.headline + `<br>` + `<span>${cellData.category}</span>`;
 
                     desc.append(p1, p2);
 
@@ -298,28 +404,31 @@ class CoffeeFinder {
 
                     buttonMinus.addEventListener('click', () => {
                         price.dataset.value = +price.dataset.value - 1;
-                        if (+price.dataset.value < 0) price.dataset.value = 1;
+                        if (+price.dataset.value <= 0) price.dataset.value = 1;
                         price.textContent = `₩ ${(+price.dataset.value * cellData.price * cellData.salesMultiple).toLocaleString()}`;
-                        count.textContent = `${+price.dataset.value} (${+price.dataset.value * cellData.salesMultiple})`;
+                        count.innerHTML = `${+price.dataset.value} <span>(${+price.dataset.value * cellData.salesMultiple})</span>`;
                     });
                     buttonPlus.addEventListener('click', () => {
                         price.dataset.value = +price.dataset.value + 1;
                         price.textContent = `₩ ${(+price.dataset.value * cellData.price * cellData.salesMultiple).toLocaleString()}`;
-                        count.textContent = `${+price.dataset.value} (${+price.dataset.value * cellData.salesMultiple})`;
+                        count.innerHTML = `${+price.dataset.value} <span>(${+price.dataset.value * cellData.salesMultiple})</span>`;
                     });
 
                     buttonMinus.classList.add('btn_minus');
-                    count.textContent = `${+price.dataset.value} (${+price.dataset.value * cellData.salesMultiple})`;
+                    count.innerHTML = `${+price.dataset.value} <span>(${+price.dataset.value * cellData.salesMultiple})</span>`;
                     buttonPlus.classList.add('btn_plus');
 
                     counter.append(buttonMinus, count, buttonPlus);
 
                     const addCart = document.createElement('button');
                     addCart.classList.add('add_cart');
+                    addCart.addEventListener('click', () => {
+                        this.addCart(cellData.sku, +price.dataset.value);
+                    });
 
                     productLayerControl.append(price, counter, addCart);
 
-                    info.append(title, desc, productLayerControl);
+                    info.append(title, desc);
 
                     const layerCloseButton = document.createElement('button');
                     layerCloseButton.classList.add('product_bubble_close');
@@ -327,7 +436,10 @@ class CoffeeFinder {
                         this.layer.close();
                     });
 
-                    cellData.layerEl = [thumbnail, info, layerCloseButton];
+                    topRow.append(thumbnail, info);
+                    bottomRow.append(productLayerControl);
+
+                    cellData.layerEl = [topRow, bottomRow, layerCloseButton];
                 });
             },
             mobileFilterTags: () => {
@@ -390,7 +502,12 @@ class CoffeeFinder {
                             filterdData = this.data.filter((cf) => cf.properties[0] < 0 && cf.properties[1] < 0);
                             break;
                         case 'decaf':
-                            filterdData = this.data.filter((cf) => filterList.find((filter) => filter.filterKey === 'decaf').items.includes(cf.sku));
+                            filterdData = this.data.filter((cf) => {
+                                return (
+                                    filterList.find((filter) => filter.filterKey === 'decaf').items.includes(cf.sku) ||
+                                    filterList.find((filter) => filter.filterKey === 'flavored').items.includes(cf.sku)
+                                );
+                            });
                             break;
                     }
                     filterdData.forEach((data) => {
@@ -537,6 +654,12 @@ class CoffeeFinder {
         const result3 = data3.map((data) => {
             const result = document.createElement('li');
             result.classList.add('swiper-slide');
+
+            const topRow = document.createElement('div');
+            topRow.classList.add('list_row');
+            const bottomRow = document.createElement('div');
+            bottomRow.classList.add('list_row');
+
             const thumbnail = document.createElement('div');
             thumbnail.classList.add('thumbnail');
             const image = document.createElement('img');
@@ -581,6 +704,12 @@ class CoffeeFinder {
                 renderCount();
             });
 
+            minusButton.addEventListener('click', () => {
+                count.setAttribute('value', +count.getAttribute('value') - 1);
+                if (+count.getAttribute('value') <= 0) count.setAttribute('value', 1);
+                renderCount();
+            });
+
             count.setAttribute('value', 1);
 
             const renderCount = () => {
@@ -594,13 +723,19 @@ class CoffeeFinder {
 
             const itemCartButton = document.createElement('div');
             itemCartButton.classList.add('item_cart_button');
+            itemCartButton.addEventListener('click', () => {
+                this.addCart(data.sku, +count.getAttribute('value'));
+            });
 
             itemHandle.append(itemCntHandle, itemCartButton);
 
             buttonwrap.append(price, itemHandle);
 
-            info.append(title, desc, buttonwrap);
-            result.append(thumbnail, info);
+            info.append(title, desc);
+
+            topRow.append(thumbnail, info);
+            bottomRow.append(buttonwrap);
+            result.append(topRow, bottomRow);
 
             return result;
         });
@@ -728,7 +863,10 @@ class CoffeeFinder {
                 case 'decaf':
                     chunked = [];
                     data = this.data.filter((cf) => {
-                        return filterList.find((filter) => filter.filterKey === 'decaf').items.includes(cf.sku);
+                        return (
+                            filterList.find((filter) => filter.filterKey === 'decaf').items.includes(cf.sku) ||
+                            filterList.find((filter) => filter.filterKey === 'flavored').items.includes(cf.sku)
+                        );
                     });
 
                     for (let i = 0; i < data.length; i += 3) {

@@ -1,2 +1,0 @@
-const newItem = [];
-const bestItem = [];
