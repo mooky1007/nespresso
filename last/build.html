@@ -97,10 +97,10 @@
     #quadrantCoffee .key_section .button_wrap button.active.original_button i { background: url('https://www.nespresso.com/shared_res/mos/free_html/kr/coffee_module/ico_original-active.png') no-repeat center / 100%; } 
     #quadrantCoffee .key_body { aspect-ratio: 1/1; position: relative; background: #fffcf9; border-radius: 16px; overflow: hidden; box-shadow: inset 0px 4px 50px 20px rgba(179, 115, 79, 0.2); } 
     #quadrantCoffee .key_body .content { z-index: 50; width: 100%; height: 100%; transition: 0.4s ease-in-out; z-index: 40; } 
-    #quadrantCoffee .key_body .content.top_right { transform: scale(1.6) translate(-22%, 22%); } 
-    #quadrantCoffee .key_body .content.bottom_right { transform: scale(1.6) translate(-22%, -22%); } 
-    #quadrantCoffee .key_body .content.bottom_left { transform: scale(1.6) translate(22%, -22%); } 
-    #quadrantCoffee .key_body .content.top_left { transform: scale(1.6) translate(22%, 22%); } 
+    #quadrantCoffee .key_body .content.top_right { transform: scale(1.6) translate(-22%, 22%) translateZ(0);} 
+    #quadrantCoffee .key_body .content.bottom_right { transform: scale(1.6) translate(-22%, -22%) translateZ(0);} 
+    #quadrantCoffee .key_body .content.bottom_left { transform: scale(1.6) translate(22%, -22%) translateZ(0);} 
+    #quadrantCoffee .key_body .content.top_left { transform: scale(1.6) translate(22%, 22%) translateZ(0);} 
     #quadrantCoffee .key_body:has(.content.top_right) .overlay,
     #quadrantCoffee .key_body:has(.content.bottom_right) .overlay,
     #quadrantCoffee .key_body:has(.content.bottom_left) .overlay,
@@ -266,6 +266,7 @@
     #quadrantCoffee .product_bubble .counter input::-webkit-outer-spin-button,
     #quadrantCoffee .product_bubble .counter input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; } 
     #quadrantCoffee .product_bubble .add_cart { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 40px; height: 40px; background: #257a57; background-image: url('https://www.nespresso.com/shared_res/mos/free_html/kr/coffee_module/ico_cart.png'); background-repeat: no-repeat; background-size: 20px; background-position: center; border-radius: 50px; flex: none; } 
+    #quadrantCoffee .product_bubble .add_cart.sold_out {background-color: #444; opacity: 0.4;}
     #quadrantCoffee .product_bubble_close { position: absolute; top: 20px; right: 20px; width: 20px; height: 20px; background: url('https://www.nespresso.com/shared_res/mos/free_html/kr/coffee_module/close_button.png') no-repeat center / 14px; } 
     #quadrantCoffee .product_section > div { padding: 130px 0; display: flex; flex-direction: column; gap: 30px; } 
     #quadrantCoffee .product_section_title { font-family: 'Noto Sans KR'; font-style: normal; font-weight: 400; font-size: 50px; line-height: 60px; text-align: center; letter-spacing: -0.07em; color: #000000; } 
@@ -294,6 +295,7 @@
     #quadrantCoffee .product_section_category_item_list li .item_button_wrap .item_cnt_handle .plus_button { background-image: url('https://www.nespresso.com/shared_res/mos/free_html/kr/coffee_module/ico_plus.png'); background-repeat: no-repeat; background-size: 13px; background-position: center; } 
     #quadrantCoffee .product_section_category_item_list li .item_button_wrap .item_cnt_handle > p { min-width: 0; height: 100%; border: none; outline: none; background: transparent; font-family: 'Nespresso Lucas'; font-style: normal; font-weight: 400; font-size: 18px; text-align: center; letter-spacing: -0.05em; white-space: nowrap; color: #000000; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex: 0 0 60px; } 
     #quadrantCoffee .product_section_category_item_list li .item_button_wrap .item_cart_button { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50px; height: 50px; background: #257a57; background-image: url('https://www.nespresso.com/shared_res/mos/free_html/kr/coffee_module/ico_cart.png'); background-repeat: no-repeat; background-size: 20px; background-position: center; border-radius: 50px; flex: 0 0 50px; cursor: pointer; } 
+    #quadrantCoffee .product_section_category_item_list li .item_button_wrap .item_cart_button.sold_out {background-color: #444; opacity: 0.4;}
     #quadrantCoffee .product_section_category_body .button_wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; display: flex; justify-content: space-between; align-items: center; } 
     #quadrantCoffee .product_section_category_body .button_wrap [class^='button-'] { width: 60px; height: 60px; } 
     #quadrantCoffee .product_section_category_body .button-prev { background: url('https://www.nespresso.com/shared_res/mos/free_html/kr/coffee_module/ico_btn_prev.png') no-repeat center / 100%; } 
@@ -341,10 +343,10 @@
     #quadrantCoffee .move_area button.left-bottom,
     #quadrantCoffee .move_area button.right-top,
     #quadrantCoffee .move_area button.right-bottom { width: 7.14vw; height: 7.14vw; } 
-    #quadrantCoffee .key_body .content.top_right { transform: scale(1.8) translate(-22%, 22%); } 
-    #quadrantCoffee .key_body .content.top_left { transform: scale(1.8) translate(22%, 22%); } 
-    #quadrantCoffee .key_body .content.bottom_right { transform: scale(1.8) translate(-22%, -22%); } 
-    #quadrantCoffee .key_body .content.bottom_left { transform: scale(1.8) translate(22%, -22%); } 
+    #quadrantCoffee .key_body .content.top_right { transform: scale(1.8) translate(-22%, 22%) translateZ(0);  } 
+    #quadrantCoffee .key_body .content.top_left { transform: scale(1.8) translate(22%, 22%) translateZ(0);  } 
+    #quadrantCoffee .key_body .content.bottom_right { transform: scale(1.8) translate(-22%, -22%) translateZ(0);  } 
+    #quadrantCoffee .key_body .content.bottom_left { transform: scale(1.8) translate(22%, -22%) translateZ(0);  } 
     #quadrantCoffee .key_body .content .area_rect > div span { font-size: 1.85vw; } 
     #quadrantCoffee .key_body .content .area_rect > div i { width: 3vw; height: 3vw; } 
     #quadrantCoffee .key_body .content .area_rect.right > div,
@@ -478,10 +480,10 @@
   <script>
     const coffeeData = {
       ol: [
-        { sku: '7854.80', name: '바닐라향* 커피', properties: [-4, -4] },
-        { sku: '7859.80', name: '초콜릿향* 커피', properties: [-4, -2] },
-        { sku: '7860.80', name: '캐러멜향* 커피', properties: [-4, -3] },
-        { sku: '7858.80', name: '헤이즐넛향* 커피', properties: [-5, -2] },
+        { sku: '7854.80', name: '바닐라향*', properties: [-4, -4] },
+        { sku: '7859.80', name: '초콜릿향*', properties: [-4, -2] },
+        { sku: '7860.80', name: '캐러멜향*', properties: [-4, -3] },
+        { sku: '7858.80', name: '헤이즐넛향*', properties: [-5, -2] },
         { sku: '7757.40', name: '부에노스 아이레스 룽고', properties: [-3, -4] },
         { sku: '7879.80', name: '비엔나 룽고', properties: [-2, -2] },
         { sku: '7882.80', name: '파리', properties: [-1, -2] },
@@ -519,14 +521,14 @@
 
     ],
       vl: [
-        { sku: '7295.60', name: '골든 캐러멜향* 커피', properties: [-4, -4] },
-        { sku: '7292.60', name: '스위트 바닐라향* 커피', properties: [-3, -4] },
+        { sku: '7295.60', name: '골든 캐러멜향*', properties: [-4, -4] },
+        { sku: '7292.60', name: '스위트 바닐라향*', properties: [-3, -4] },
         { sku: '7016.60', name: '비앙코 도피오 포 밀크', properties: [-1, -4] },
-        { sku: '7294.60', name: '로스티드 헤이즐넛향* 커피', properties: [-4, -2] },
-        { sku: '7296.60', name: '리치 초콜릿향* 커피', properties: [-3, -2] },
+        { sku: '7294.60', name: '로스티드 헤이즐넛향*', properties: [-4, -2] },
+        { sku: '7296.60', name: '리치 초콜릿향*', properties: [-3, -2] },
         { sku: '7057.60', name: '스위트 바닐라향* 디카페나토', properties: [-3, -4] },
-        { sku: '2116.91', name: '스타벅스® 크리미 바닐라향 커피', properties: [-3, -3] },
-        { sku: '2117.91', name: '스타벅스® 스무스 캐러멜향 커피', properties: [-4, -3] },
+        { sku: '2116.91', name: '스타벅스® 크리미 바닐라향', properties: [-3, -3] },
+        { sku: '2117.91', name: '스타벅스® 스무스 캐러멜향', properties: [-4, -3] },
         { sku: '7192.60', name: '액티브', properties: [-2, -3] },
         { sku: '7063.60', name: '비비다', properties: [-2, -2] },
         { sku: '7039.60', name: '멜로지오', properties: [-1, -2] },
@@ -574,7 +576,6 @@
 
 const coffeeDataDev = {
     ol: [
-      undefined,
         {
             sku: '7854.80',
             name: '바닐라향* 커피',
@@ -1573,7 +1574,8 @@ const filterList = [
           '7864.80',
           '7862.80',
           '7857.80',
-          '7857.80'
+          '7857.80',
+          '7057.60'
         ],
     },
     {
@@ -1971,6 +1973,8 @@ class CoffeeFinder {
                 });
             },
             productItem: (data) => {
+                const inStock = data.inStock;
+
                 const topRow = document.createElement('div');
                 topRow.classList.add('list_row');
                 const bottomRow = document.createElement('div');
@@ -1991,7 +1995,7 @@ class CoffeeFinder {
                 const buttonwrap = document.createElement('div');
                 buttonwrap.classList.add('item_button_wrap');
 
-                title.innerHTML = data.name;
+                title.innerHTML = inStock ? data.name : `${data.name}(품절)`;
                 desc.innerHTML = `
                       <p>${data.capsuleProductAromatics.join(' ,')}</p>
                       <p>${data.headline}</p>
@@ -2039,9 +2043,13 @@ class CoffeeFinder {
                 const itemCartButton = document.createElement('div');
                 itemCartButton.classList.add('item_cart_button');
 
-                itemCartButton.addEventListener('click', () => {
-                    this.addCart(data.sku, +(+count.dataset.value * +data.salesMultiple));
-                });
+                if(inStock){
+                  itemCartButton.addEventListener('click', () => {
+                      this.addCart(data.sku, +(+count.dataset.value * +data.salesMultiple));
+                  });
+                }else{
+                  itemCartButton.classList.add('sold_out');
+                }
 
                 itemHandle.append(itemCntHandle, itemCartButton);
 
@@ -2056,6 +2064,8 @@ class CoffeeFinder {
             },
             layerEl: (data) => {
                 data.forEach((cellData) => {
+                    const inStock = cellData.inStock;
+
                     const topRow = document.createElement('div');
                     topRow.classList.add('bubble_row');
                     const bottomRow = document.createElement('div');
@@ -2073,7 +2083,7 @@ class CoffeeFinder {
 
                     const title = document.createElement('div');
                     title.classList.add('product_bubble_title');
-                    title.innerHTML = cellData.name;
+                    title.innerHTML = inStock ? cellData.name : `${cellData.name}(품절)`;
 
                     const desc = document.createElement('div');
                     desc.classList.add('product_bubble_desc');
@@ -2120,9 +2130,14 @@ class CoffeeFinder {
 
                     const addCart = document.createElement('button');
                     addCart.classList.add('add_cart');
-                    addCart.addEventListener('click', () => {
-                        this.addCart(cellData.sku, +(+price.dataset.value * cellData.salesMultiple));
-                    });
+
+                    if(inStock){
+                      addCart.addEventListener('click', () => {
+                          this.addCart(cellData.sku, +(+price.dataset.value * cellData.salesMultiple));
+                      });
+                    }else{
+                      addCart.classList.add('sold_out');
+                    }
 
                     productLayerControl.append(price, counter, addCart);
 
@@ -2242,6 +2257,7 @@ class CoffeeFinder {
         this.data = this.coffeeData[this.type];
 
         this.layer?.close();
+        this.setComponents().pcSwiper();
         this.resetContent();
         this.render();
         this.renderPrd();
@@ -2350,6 +2366,8 @@ class CoffeeFinder {
 
     createMoItem(data3) {
         const result3 = data3.map((data) => {
+            const inStock = data.inStock;
+
             const result = document.createElement('li');
             result.classList.add('swiper-slide');
 
@@ -2373,7 +2391,7 @@ class CoffeeFinder {
             const buttonwrap = document.createElement('div');
             buttonwrap.classList.add('item_button_wrap');
 
-            title.innerHTML = data.name;
+            title.innerHTML = inStock ? data.name : `${data.name}(품절)`;
             desc.innerHTML = `
         <p>${data.capsuleProductAromatics.join(' ,')}</p>
         <p>${data.headline}</p>
@@ -2421,9 +2439,13 @@ class CoffeeFinder {
 
             const itemCartButton = document.createElement('div');
             itemCartButton.classList.add('item_cart_button');
-            itemCartButton.addEventListener('click', () => {
-                this.addCart(data.sku, +(+count.getAttribute('value') * data.salesMultiple));
-            });
+            if(inStock){
+              itemCartButton.addEventListener('click', () => {
+                  this.addCart(data.sku, +(+count.getAttribute('value') * data.salesMultiple));
+              });
+            }else{
+              itemCartButton.classList.add('sold_out');
+            }
 
             itemHandle.append(itemCntHandle, itemCartButton);
 
@@ -2452,33 +2474,35 @@ class CoffeeFinder {
     render() {
         this.resetGrid();
         this.data
-            .filter((coffee) => {
-                if (this.filterData.size === 0) return true;
-                else {
-                    const filteredData = filterList.filter((filter2) => Array.from(this.filterData).includes(filter2.filterKey));
-                    return filteredData.some((el) => el.items.includes(coffee.sku));
-                }
-            })
-            .filter((coffee) => {
-                if (this.filterData.size === 0) {
-                    return !filterList.find((el) => el.filterKey === 'decaf').items.includes(coffee.sku);
-                } else {
-                    return true;
-                }
-            })
-            .forEach((coffee) => {
-                if (coffee.properties.length !== 2) return;
-                const [x, y] = coffee.properties;
-                const target = this.getCell(x, y);
-                if (!target) return;
-                target.innerHTML = ``;
-                target.append(...coffee.el);
-            });
+  .filter((coffee) => {
+    const isDecaf = filterList.find((el) => el.filterKey === 'decaf')?.items.includes(coffee.sku);
+    const activeFilterKeys = Array.from(this.filterData);
+
+    // 1. 디카페인 필터가 꺼져 있으면 디카페인 상품은 무조건 제외
+    if (isDecaf && !activeFilterKeys.includes('decaf')) return false;
+
+    // 2. 필터가 하나도 없을 경우, 디카페인 외에는 모두 허용
+    if (this.filterData.size === 0) return !isDecaf;
+
+    // 3. 필터가 있는 경우, 필터 조건에 부합하는 상품만 허용
+    const matched = filterList
+      .filter((filter) => activeFilterKeys.includes(filter.filterKey))
+      .some((filter) => filter.items.includes(coffee.sku));
+
+    return matched;
+  })
+  .forEach((coffee) => {
+    if (coffee.properties.length !== 2) return;
+    const [x, y] = coffee.properties;
+    const target = this.getCell(x, y);
+    if (!target) return;
+    target.innerHTML = ``;
+    target.append(...coffee.el);
+  });
     }
 
     renderPrd() {
         const moArticles = document.querySelectorAll('.product_section_body.mo_only .product_section_category_item_list');
-
         moArticles.forEach((el) => {
             el.querySelector('.swiper-wrapper').innerHTML = '';
             let chunked = [];
